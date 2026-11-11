@@ -22,11 +22,11 @@ Word 中的项目标题、原始段落、括号注释和词条位置会一同出
 
 GitHub 仓库地址：<https://github.com/lyuancen/professional-translation>。整个仓库即一个 Skill，Word 会随 Skill 一起下载。需要 Python 3。Private 仓库的同事须先获得访问权限，并在本机完成 GitHub 登录或 SSH 配置。
 
-**最简单的 Codex 安装方式：**在 Codex 中发送以下消息。仓库根目录就是 Skill 目录；`$skill-installer` 需要指定根路径 `.` 和名称 `professional-translation`。
+**Codex 安装方式：**在 Codex 中发送以下消息。仓库根目录就是 Skill 目录；`$skill-installer` 需要指定根路径 `.` 和名称 `professional-translation`。Private 仓库请使用 Git 模式，并先确认本机可通过 GitHub HTTPS 凭据或 SSH 密钥访问仓库。当前安装器在 Git 模式安装仓库根目录时先进行稀疏检出，因此安装后还需展开完整目录。
 
-> 使用 `$skill-installer` 从 `https://github.com/lyuancen/professional-translation` 安装仓库根目录的 Skill（路径 `.`，名称 `professional-translation`）。
+> 使用 `$skill-installer` 从 `https://github.com/lyuancen/professional-translation` 安装仓库根目录的 Skill。请指定路径 `.`、名称 `professional-translation`，并使用 Git 模式（`--method git`）。安装后，在安装目录运行 `git sparse-checkout disable`，确认 `glossary/English 0928.docx` 和 `scripts/glossary.py` 已出现，再运行 `python3 scripts/glossary.py status`（Windows 用 `py -3`）。
 
-安装器会把 Skill 复制到个人技能目录；若该目录已存在同名 Skill，安装器会停止并提示，不会覆盖。通过安装器获取的下载版未必保留 Git 元数据，后续更新可让 Codex 协助移除旧安装并重新安装。若计划长期直接编辑共享 Word 或通过 `git pull` 更新，推荐以下 Git 克隆方式。需先安装 Git。
+安装器会把 Skill 复制到个人技能目录；若该目录已存在同名 Skill，安装器会停止并提示，不会覆盖。上述 Git 模式经验证会保留 Git 元数据，展开目录后可在安装目录运行 `git pull --ff-only` 更新。也可以采用以下直接 Git 克隆方式。两种方式都需要 Git。
 
 **macOS（终端）：**
 
