@@ -1,0 +1,14 @@
+# Share only this reviewed allowlist. `git add .` cannot stage routine materials.
+*
+!.gitignore
+!README.md
+!SKILL.md
+!agents/
+!agents/openai.yaml
+!glossary/
+!glossary/English 0928.docx
+!scripts/
+!scripts/glossary.py
+!scripts/check_share.py
+!references/
+!references/source-guidance.md
